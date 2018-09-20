@@ -4,10 +4,10 @@ import requests
 import pandas as pd
 
 #Set this to your save path
-save_path = 'YOUR_SAVE_PATH'
-file_name = 'listening_history.csv'
+path = 'YOUR_FILE_PATH'
+file_name = 'data/listening_history.csv'
 
-#Rreplace with your key and history
+#Replace with your key and history
 key = 'YOUR_API_KEY'
 username = 'YOUR_USERNAME'
 
@@ -73,4 +73,4 @@ def get_history(username, key,limit=200,page=1):
 
 #Function calls to get listening history and save to computer
 history = get_history(username=username,key=key)
-history.to_csv(save_path+file_name, index=None, encoding='utf-8')
+history.to_csv(path+file_name, index=None, encoding='utf-8')

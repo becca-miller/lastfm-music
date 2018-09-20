@@ -7,13 +7,13 @@ import pandas as pd
 import os
 
 #Set directory and file name here
-path = 'YOUR_DATA_PATH'
+path = 'YOUR_FILE_PATH'
 #You can use my listening history, stored here, or generate your own using lastfm_data
 file_name = 'data/listening_history.csv'
 os.chdir(path) 
 
 #Read in file containing listening history
-history = pd.read_csv(data_path+file_name, encoding='utf-8')
+history = pd.read_csv(path+file_name, encoding='utf-8')
 
 #Generate a list of all songs with >=cutoff subsequent plays
 def looped_tracks(hist,cutoff,repeats=1, chrono=0):
@@ -77,11 +77,11 @@ def looped_tracks(hist,cutoff,repeats=1, chrono=0):
 
 
 #Get list of songs with at least 5 consecutive plays, allowing for repeats
-tracks_rep = looped_tracks(history,cutoff=5,repeats=1,chrono=0)
-tracks_rep = pd.DataFrame(tracks_rep)
-tracks_rep.to_csv('tracks_rep.csv',index=None,encoding='utf-8')
+looped_rep = looped_tracks(history,cutoff=5,repeats=1,chrono=0)
+looped_rep = pd.DataFrame(looped_rep)
+looped_rep.to_csv('data/looped_rep.csv',index=None,encoding='utf-8')
 
 #Similar call, this time disallowing repeats
-tracks_norep = looped_tracks(history,cutoff=5,repeats=0,chrono=0)
-tracks_norep = pd.DataFrame(tracks_norep)
-tracks_norep.to_csv('tracks_norep.csv',index=None,encoding='utf-8')
+looped_norep = looped_tracks(history,cutoff=5,repeats=0,chrono=0)
+looped_norep = pd.DataFrame(looped_norep)
+looped_norep.to_csv('data/looped_norep.csv',index=None,encoding='utf-8')
