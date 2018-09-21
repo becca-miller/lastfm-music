@@ -1,6 +1,6 @@
 # Exploring your Last.fm listening history
 
-Last.fm is a website that that tracks your music listening history. In this repo, I'm creating tools to explore your listening history. All data files generated from these scripts, using my account, are included in the [data folder](https://github.com/becca-miller/lastfm-music/tree/master/data).
+Last.fm is a website that that tracks your music listening history. In this repo, I'm creating tools to explore your listening history. All data files generated from these scripts, using [my account](https://www.last.fm/user/bemiller627), are included in the [data folder](https://github.com/becca-miller/lastfm-music/tree/master/data).
 
 ## [consecutive_plays.py](https://github.com/becca-miller/lastfm-music/blob/master/consecutive_plays.py)
 
